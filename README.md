@@ -1,4 +1,4 @@
-This repository contains various scripts to aid in the creation of mods for Custom Order Maid 3d2
+This repository contains various scripts to aid in the creation of mods for Custom Order Maid 3D2
 
 The repository's wiki also aims to document the usage of bones in Custom Order Maid 3D2 mods.
 
