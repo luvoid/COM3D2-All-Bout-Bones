@@ -1,5 +1,5 @@
 
-[COM3D2: All 'Bout Bones Wiki](https://github.com/luvoid/COM3D2-All-Bout-Bones/wiki)
+# [COM3D2: All 'Bout Bones Wiki](https://github.com/luvoid/COM3D2-All-Bout-Bones/wiki)
 
 This repository contains various scripts to aid in the creation of model mods for Custom Order Maid 3D2.
 Specifically it helps with armature's bone structure.
