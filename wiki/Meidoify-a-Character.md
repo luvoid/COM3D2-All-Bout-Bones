@@ -40,8 +40,8 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 
 ### Step 5: Bones
 * Move extra bones from the character's half of the CM3D2 character's armature to some appropriate bones in the CM3D2 body's half.
-* Decide what bones you want to be scaled with [_SCL_ bones](Scaling-Bones.md) and follow their step 1 & 2 (but not step 3 yet).
-* Sort out and rename your [dynamic bones](Dynamic-Bones.md) now, or else you'll need to come back to this step later if you need to change their hierarchy to be under a different _SCL_ bone.
+* Decide what bones you want to be scaled with [\_SCL_ bones](Scaling-Bones.md) and follow their step 1 & 2 (but not step 3 yet).
+* Sort out and rename your [dynamic bones](Dynamic-Bones.md) now, or else you'll need to come back to this step later if you need to change their hierarchy to be under a different \_SCL_ bone.
 
 ### Step 6: Magic!
 This step is going to make use of animations and poses, so you may wanna know how that works in blender. The goal is to invert all the transforms you made on the CM3D2 body earlier, and morph the character mesh with it, so that in the COM3D2 game, when you create a maid with the same settings, it has the same proportions as the original character.
