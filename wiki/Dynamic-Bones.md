@@ -3,7 +3,7 @@ Dynamic bones are bones in COM3D2 that have simulated physics (commonly used for
 
 If you are trying to add movement that is not necessarily dependent on gravity or physics (like wings or tails), then you may want to use an animated model instead.
 
-# Types of Dynamic Bones
+## Types of Dynamic Bones
 There are primarily 2 types of dynamic bones: yure bones and skirt bones.
 * **Skirt** bones are used for, well, skirts (and sometimes things like sword sheaths on the hip.)
 * **Yure** bones are used for almost everything else, including hair, scarfs, jewelry, etc.
