@@ -1,4 +1,4 @@
-# COM3D2: All 'Bout Bones Wiki
+# [COM3D2: All 'Bout Bones Wiki](https://github.com/luvoid/COM3D2-All-Bout-Bones/blob/main/wiki/Home.md)
 _NOTE: If you find or have any issues in the documentation, please open a new issue on GitHub._
 
 ### Helpful Blender Plugins:
