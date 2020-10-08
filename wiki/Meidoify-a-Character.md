@@ -12,7 +12,7 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 * Get your choice of CM3D2 body model loaded in at 1.0 scale. (Beware [import issues](Exporting-Bones.md#roll-import-bug-may-only-apply-in-blender-28))
 * Get your non-CM3D2 Character in the same scene, and make sure that it matches the 1 unit = 1 meter scale. (You may be able to look up the character's cannon height if you're not sure what it should be)
 
-![Imported Character](pictures/MotorCyclePose.png)
+![Imported Character](pictures/Import.png)
 
 ### Step 2: Setup the Armatures
 * Select the CM3D2 Body model and run [`COM3D2 BoneMorph.py`](../scripts/COM3D2%20BoneMorph.py)
