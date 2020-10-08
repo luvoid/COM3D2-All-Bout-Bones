@@ -89,3 +89,5 @@ Now is the time to clean vertex groups, bones, or any other issues you find. If 
 
 ### Step 9: Export
 Finally, just follow the normal procedures that you would for any other CM3D2 model. There are many tutorials you can find detailing this.
+
+![Exported Character](pictures/MeidoifyExport.png)
