@@ -11,9 +11,12 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 ### Step 1: Import to Blender
 * Get your choice of CM3D2 body model loaded in at 1.0 scale. (Beware [import issues](Exporting-Bones.md#roll-import-bug-may-only-apply-in-blender-28))
 * Get your non-CM3D2 Character in the same scene, and make sure that it matches the 1 unit = 1 meter scale. (You may be able to look up the character's cannon height if you're not sure what it should be)
+
 ![Imported Character](pictures/Import.png)
+
 * Try and pose the character so that it is similar to the "motorcycle" pose of the CM3D2 body.
   Don't spend much time on this though as alignment needs fine tuning later.
+
 ![Aligned Character](pictures/MotorCyclePose.png)
 
 ### Step 2: Setup the Armatures
@@ -23,7 +26,9 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 ### Step 3: Sliders
 * Under the custom properties of the CM3D2 body object, there should be properties that act identically to the body sliders in game. If not you may need to go back to step 2.
 * Using **only the sliders** adjust the CM3D2 body to try and get the proportions to match your character's.
+
 ![Body Sliders](pictures/BodySliders.png)
+
 * Move and repose the character as needed to help it line up with the CM3D2 body.
 * Repeat the previous two sub-steps until you are satisfied with the alignment.
 
@@ -33,7 +38,10 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 * First, apply the armature-mesh-modifier all of the character's meshes (make a copy of the object first).
 * Then, apply the current pose of the character as it's new rest pose.
 * Repeat the previous sub-steps for the CM3D2 body, but also apply it's shapekeys (make a copy of the object first, it is needed later).
-* Next the vertex groups need to be transferred from the CM3D2 body to the character. This can be done the old fashion way, or using CM3D2-Converter, or using ![`COM3D2_Referenced_Vertex_Weight_Transfer.py`](../scripts/COM3D2_Referenced_Vertex_Weight_Transfer.py).
+* Next the vertex groups need to be transferred from the CM3D2 body to the character. This can be done the old fashion way, or using CM3D2-Converter, or using 
+
+![`COM3D2_Referenced_Vertex_Weight_Transfer.py`](../scripts/COM3D2_Referenced_Vertex_Weight_Transfer.py).
+
 * Join (`Ctrl J`) the copy of the character into the CM3D2 body to become what will now be referred to as the _CM3D2 Character_. 
 * Make sure to add new armature-mesh-modifiers into both of the new meshes.
 
@@ -53,9 +61,11 @@ This step is going to make use of animations and poses, so you may wanna know ho
 * Create two new NLA Tracks under CM3D2 Character (you may want to make a copy first)
 * Put the "Default Pose" NLA strip in the top NLA track, and set its blending mode to "add"
 * Put the "Character Pose" NLA strip in the second NLA track directly under "Default Pose", and set it's mode to "Subtract"
+
 ![NLA Editor Timeline](pictures/NLAPoseInversion.png)
 
 If everything was done correctly, the character mesh should be morphed to fit the default posed CM3D2 body.
+
 ![Newly Morphed CM3D2 Character](pictures/InverseMorphed.png)
 
 ### Step 7: Cleanup
