@@ -28,7 +28,7 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 * First, apply the armature-mesh-modifier all of the character's meshes (make a copy of the object first).
 * Then, apply the current pose of the character as it's new rest pose.
 * Repeat the previous sub-steps for the CM3D2 body, but also apply it's shapekeys (make a copy of the object first, it is needed later).
-* Next the vertex groups need to be transferred from the CM3D2 body to the character. This can be done the old fashion way, or using CM3D2-Converter, or using [`COM3D2_Referenced_Vertex_ Weight_Transfer.py`](../scripts/COM3D2_Referenced_Vertex_ Weight_Transfer.py).
+* Next the vertex groups need to be transferred from the CM3D2 body to the character. This can be done the old fashion way, or using CM3D2-Converter, or using [`COM3D2_Referenced_Vertex_Weight_Transfer.py`](../scripts/COM3D2_Referenced_Vertex_Weight_Transfer.py).
 * Insert usage of `COM3D2 Referenced Vertex Weight Transfer.py` here.
 * Join (`Ctrl J`) the copy of the character into the CM3D2 body to become what will now be referred to as the _CM3D2 Character_. 
 * Make sure to add new armature-mesh-modifiers into both of the new meshes.
