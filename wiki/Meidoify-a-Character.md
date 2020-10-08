@@ -46,7 +46,19 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 ### Step 6: Magic!
 This step is going to make use of animations and poses, so you may wanna know how that works in blender. The goal is to invert all the transforms you made on the CM3D2 body earlier, and morph the character mesh with it, so that in the COM3D2 game, when you create a maid with the same settings, it has the same proportions as the original character.
 
-(i.e. _character_ - (_body_ + _sliders_) = _character_ - _sliders_ - _body_ --> export model --> setting body and sliders in-game = (_character_ - _sliders_ - _body_) + (_sliders_ + _body_) = _character_. **TADA!**)
+i.e.
+> _character_ - (_body_ + _sliders_) 
+>
+> = _character_ - _sliders_ - _body_ 
+>
+> --> export model 
+>
+> --> setting body and sliders in-game 
+>
+> = (_character_ - _sliders_ - _body_) + (_sliders_ + _body_) 
+>
+> = _character_
+
 * Using the original CM3D2 body, make sure you are recording keyframes, then apply visual transform to pose.
 * Save the current pose as a new NLA Strip named something like "Character Pose"
 * Clear CM3D2 body's animation data (not the NLA track though) and then clear all user transforms. CM3D2 should now be back to its default state. You may need to disable the NLA track in the NLA editor.
@@ -55,21 +67,25 @@ This step is going to make use of animations and poses, so you may wanna know ho
 * Put the "Default Pose" NLA strip in the top NLA track, and set its blending mode to "add"
 * Put the "Character Pose" NLA strip in the second NLA track directly under "Default Pose", and set it's mode to "Subtract"
 
-![NLA Editor Timeline](pictures/NLAPoseInversion.png)
-
 If everything was done correctly, the character mesh should be morphed to fit the default posed CM3D2 body.
 
+![NLA Editor Timeline](pictures/NLAPoseInversion.png)
 ![Newly Morphed CM3D2 Character](pictures/InverseMorphed.png)
 
 ### Step 7: Cleanup
-Now is the time to clean vertex groups and shape keys. If something was morphed in a strange way it's likely due to bad vertex weights. Vertex weights can be cleaned up by hand without having to reverse any steps.
+Now is the time to clean vertex groups, bones, or any other issues you find. If something was morphed in a strange way it's likely due to bad vertex weights. Vertex weights can be cleaned up by hand without having to reverse any steps.
 
 ### Step 8: Apply
 * Apply the armature-mesh-modifier to the CM3D2 character mesh, and the rest pose to a copy of the CM3D2 armature. This is similar to steps 4.1-4.2.
 * Add a new armature-mesh-modifier to the CM3D2 character mesh.
 * Remove `_SCL_` from all the vertex groups (done easily with [`COM3D2_Cleanup_SCL_groups.py`](../scripts/COM3D2_Cleanup_SCL_groups.py)), except the ones you need to keep for your [Scaling Bones: Step 3](Scaling-Bones.md#step-3-edit-the-bone-data) which you should also do now. 
 * Use BoneUtil to add any custom bones to the bone data.
-* Fix any shapekeys as needed. Try and make a shapekey of CM3D2 Character for every non-zero shapekey in the CM3D2 Body first that shapes it to match the zeros of their respective CM3D2 body shapekeys, and then CM3D2 Converter's shapekey scaling tool to get a new shapekey where _newSk_ = _Sk_ * ((_bodySkMax_-_bodySkValue_)/_bodySkMax_ + 1) and update the basis so that _newBasis_ = _Basis_ - _Sk_
+* Fix any shapekeys as needed. First, try and make a shapekey of CM3D2 Character for every non-zero shapekey in the CM3D2 Body that shapes it to match the zeros of their respective CM3D2 body shapekeys. Then, use CM3D2 Converter's shapekey scaling tool to get a new shapekey where 
+	 > _newSk_ = _Sk_ * ((_bodySkMax_-_bodySkValue_)/_bodySkMax_ + 1) 
+	 
+	 and update the basis so that 
+	
+	> _newBasis_ = _Basis_ - _Sk_
 
 ### Step 9: Export
 Finally, just follow the normal procedures that you would for any other CM3D2 model. There are many tutorials you can find detailing this.
