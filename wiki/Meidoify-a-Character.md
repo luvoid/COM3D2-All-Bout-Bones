@@ -11,16 +11,14 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 ### Step 1: Import to Blender
 * Get your choice of CM3D2 body model loaded in at 1.0 scale. (Beware [import issues](Exporting-Bones.md#roll-import-bug-may-only-apply-in-blender-28))
 * Get your non-CM3D2 Character in the same scene, and make sure that it matches the 1 unit = 1 meter scale. (You may be able to look up the character's cannon height if you're not sure what it should be)
-
 ![Imported Character](pictures/Import.png)
+* Try and pose the character so that it is similar to the "motorcycle" pose of the CM3D2 body.
+  Don't spend much time on this though as alignment needs fine tuning later.
+![Aligned Character](pictures/MotorCyclePose.png)
 
 ### Step 2: Setup the Armatures
 * Select the CM3D2 Body model and run [`COM3D2_BoneMorph.py`](../scripts/COM3D2_BoneMorph.py)
 * It may complain about missing bones or properties, so try adding those manually.
-* Try and pose the character so that it is similar to the "motorcycle" pose of the CM3D2 body.
-  Don't spend much time on this though as alignment needs fine tuning later.
-
-![Aligned Character](pictures/MotorCyclePose.png)
 
 ### Step 3: Sliders
 * Under the custom properties of the CM3D2 body object, there should be properties that act identically to the body sliders in game. If not you may need to go back to step 2.
