@@ -1,3 +1,4 @@
+# [Exporting Bones](https://github.com/luvoid/COM3D2-All-Bout-Bones/blob/main/wiki/Exporting-Bones.md)
 Maybe I'll add more here, but for now here are the plugins' tutorials.
 
 ### [Converter BoneData (Japanese)](https://github.com/trzr/Blender-CM3D2-Converter#%E3%83%9C%E3%83%BC%E3%83%B3)
