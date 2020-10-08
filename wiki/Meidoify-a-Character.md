@@ -1,4 +1,4 @@
-# Meido-ify a Character
+# [Meido-ify a Character](https://github.com/luvoid/COM3D2-All-Bout-Bones/blob/main/wiki/Meidoify-a-Character.md)
 
 **NOTE: I haven't really tested this in many scenarios yet, so you may have to manually create certain properties, bones, etc, for the script to work right**
 
@@ -9,11 +9,11 @@ _It is highly recommended to make **unique** backups before running scripts, you
 _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 body_ is the imported stock CM3D2 body model. 
 
 ### Step 1: Import to Blender
-* Get your choice of CM3D2 body model loaded in at 1.0 scale. (Beware [import issues](https://github.com/luvoid/COM3D2-All-Bout-Bones/wiki/Exporting-Bones#roll-import-bug-may-only-apply-in-blender-28))
+* Get your choice of CM3D2 body model loaded in at 1.0 scale. (Beware [import issues](Exporting-Bones.md#roll-import-bug-may-only-apply-in-blender-28))
 * Get you non-CM3D2 Character in the same scene, and make sure that it matches the 1 unit = 1 meter scale. (You may be able to look up the character's cannon height if you're not sure what it should be)
 
 ### Step 2: Setup the Armatures
-* Select the CM3D2 Body model and run [`COM3D2 BoneMorph.py`](https://github.com/luvoid/COM3D2-All-Bout-Bones/blob/main/Scripts/COM3D2%20BoneMorph.py)
+* Select the CM3D2 Body model and run [`COM3D2 BoneMorph.py`](../scripts/COM3D2%20BoneMorph.py)
 * It may complain about missing bones or properties, so try adding those manually.
 * Try and pose the character so that it is similar to the "motorcycle" pose of the CM3D2 body, but not to much as this needs fine tuning later.
 
