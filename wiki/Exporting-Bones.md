@@ -6,4 +6,4 @@ Maybe I'll add more here, but for now here are the plugins' tutorials.
 
 ### Roll Import Bug (_May only apply in Blender 2.8+_)
 
-Be aware that Blender-CM3D2-Converter will give the blender bones an incorrect roll, so if you then use BoneUtil to update the BoneData of imported bones, using the blender bones, or simply export using the armature, your model may load into COM3D2 with twisted limbs. The improper roll values on the blender bones will also affect scripts like `COM3D2_BoneMorph.py`
+Be aware that Blender-CM3D2-Converter will give the blender bones an incorrect roll, so if you then use BoneUtil to update the BoneData of imported bones, using the blender bones, or simply export using the armature, your model may load into COM3D2 with twisted limbs. The improper roll values on the blender bones will also affect scripts like `COM3D2_BoneMorph.py`.
