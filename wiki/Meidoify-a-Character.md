@@ -15,7 +15,7 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 ![Imported Character](pictures/Import.png)
 
 ### Step 2: Setup the Armatures
-* Select the CM3D2 Body model and run [`COM3D2 BoneMorph.py`](../scripts/COM3D2%20BoneMorph.py)
+* Select the CM3D2 Body model and run [`COM3D2_BoneMorph.py`](../scripts/COM3D2_BoneMorph.py)
 * It may complain about missing bones or properties, so try adding those manually.
 * Try and pose the character so that it is similar to the "motorcycle" pose of the CM3D2 body.
   Don't spend much time on this though as alignment needs fine tuning later.
