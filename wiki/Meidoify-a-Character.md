@@ -24,13 +24,11 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 ### Step 3: Sliders
 * Under the custom properties of the CM3D2 body object, there should be properties that act identically to the body sliders in game. If not you may need to go back to step 2.
 * Using **only the sliders** adjust the CM3D2 body to try and get the proportions to match your character's.
-
-![Body Sliders](pictures/BodySliders.png)
-
 * Move and repose the character as needed to help it line up with the CM3D2 body.
 * Repeat the previous two sub-steps until you are satisfied with the alignment.
 
 ![Aligned COM3D2 Body](pictures/MotorCyclePoseAlign.png)
+![Body Sliders](pictures/BodySliders.png)
 
 ### Step 4: Vertex Groups
 * First, apply the armature-mesh-modifier all of the character's meshes (make a copy of the object first).
