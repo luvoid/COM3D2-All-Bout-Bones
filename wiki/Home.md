@@ -29,7 +29,7 @@ How to ensure bones are scaled correctly with the body.
 Replicates the effects of the in game body sliders.
 
 ### [`COM3D2_Cleanup_SCL_groups.py`](../scripts/COM3D2_Cleanup_SCL_groups.py)
-Remove any _SCL_ bones left over from `COM3D2_BoneMorph.py`.
+Remove any \_SCL_ bones left over from `COM3D2_BoneMorph.py`.
 
 ### [`COM3D2_Referenced_Vertex_Weight_Transfer.py`](../scripts/COM3D2_Referenced_Vertex_Weight_Transfer.py)
 Enhances vertex weight transfer by using preexisting vertex groups on the target mesh.
