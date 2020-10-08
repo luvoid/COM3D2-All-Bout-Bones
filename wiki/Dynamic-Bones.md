@@ -1,4 +1,4 @@
-# Dynamic Bones
+# [Dynamic Bones](https://github.com/luvoid/COM3D2-All-Bout-Bones/blob/main/wiki/Dynamic-Bones.md)
 Dynamic bones are bones in COM3D2 that have simulated physics (commonly used for skirts and hair)
 
 If you are trying to add movement that is not necessarily dependent on gravity or physics (like wings or tails), then you may want to use an animated model instead.
