@@ -1,6 +1,6 @@
 # [Meido-ify a Character](https://github.com/luvoid/COM3D2-All-Bout-Bones/blob/main/wiki/Meidoify-a-Character.md)
 
-**NOTE: I haven't really tested this in many scenarios yet, so you may have to manually create certain properties, bones, etc, for the script to work right**
+**NOTE: I haven't really tested this in many scenarios yet, so you may have to manually create certain properties, bones, etc, for the scripts to work right**
 
 This is a more **advance** technique. You need to be more familiar with CM3D2 modding and blender to follow this.
 
@@ -12,17 +12,24 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 * Get your choice of CM3D2 body model loaded in at 1.0 scale. (Beware [import issues](Exporting-Bones.md#roll-import-bug-may-only-apply-in-blender-28))
 * Get you non-CM3D2 Character in the same scene, and make sure that it matches the 1 unit = 1 meter scale. (You may be able to look up the character's cannon height if you're not sure what it should be)
 
+[Imported Character](pictures/MotorCyclePose.png)
+
 ### Step 2: Setup the Armatures
 * Select the CM3D2 Body model and run [`COM3D2 BoneMorph.py`](../scripts/COM3D2%20BoneMorph.py)
 * It may complain about missing bones or properties, so try adding those manually.
-* Try and pose the character so that it is similar to the "motorcycle" pose of the CM3D2 body, but not to much as this needs fine tuning later.
+* Try and pose the character so that it is similar to the "motorcycle" pose of the CM3D2 body.
+  Don't spend much time on this though as alignment needs fine tuning later.
+
+[Aligned Character](pictures/MotorCyclePose.png)
 
 ### Step 3: Sliders
 * Under the custom properties of the CM3D2 body object, there should be properties that act identically to the body sliders in game. If not you may need to go back to step 2.
 * Using **only the sliders** adjust the CM3D2 body to try and get the proportions to match your character's.
+[Body Sliders](pictures/BodySliders.png)
 * Move and repose the character as needed to help it line up with the CM3D2 body.
 * Repeat the previous two sub-steps until you are satisfied with the alignment.
 
+[Aligned COM3D2 Body](pictures/MotorCyclePoseAlign.png)
 
 ### Step 4: Vertex Groups
 * First, apply the armature-mesh-modifier all of the character's meshes (make a copy of the object first).
@@ -48,8 +55,10 @@ This step is going to make use of animations and poses, so you may wanna know ho
 * Create two new NLA Tracks under CM3D2 Character (you may want to make a copy first)
 * Put the "Default Pose" NLA strip in the top NLA track, and set its blending mode to "add"
 * Put the "Character Pose" NLA strip in the second NLA track directly under "Default Pose", and set it's mode to "Subtract"
+[NLA Editor Timeline](pictures/NLAPoseInversion.png)
 
 If everything was done correctly, the character mesh should be morphed to fit the default posed CM3D2 body.
+[Newly Morphed CM3D2 Character](pictures/InverseMorphed.png)
 
 ### Step 7: Cleanup
 Now is the time to clean vertex groups and shape keys. If something was morphed in a strange way it's likely due to bad vertex weights. Vertex weights can be cleaned up by hand without having to reverse any steps.
