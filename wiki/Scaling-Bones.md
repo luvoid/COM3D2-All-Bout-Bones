@@ -20,7 +20,7 @@ Using the Blender-CM3D2-Converter plugin, edit the bone data of the model.
 * Then, copy and paste the entire line so that there are two of them now.
 * In the copied line, for the first name, append `_SCL_` so that it matches the name of the `_SCL_` bone.
 * In the copied line, for the second name, change it to the name of the original bone.
-* > Before: 
+> Before: 
 > ```
 > Bip01 Pelvis, 1, Bip01, 123456789...
 > ```
