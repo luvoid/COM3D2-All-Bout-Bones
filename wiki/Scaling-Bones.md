@@ -1,6 +1,8 @@
 # [Scaling Bones](https://github.com/luvoid/COM3D2-All-Bout-Bones/blob/main/wiki/Scaling-Bones.md)
 **If you are attaching new bones for clothing to the pelvis or spine,** you may run into an issue where **those bones don't don't scale properly** when you adjust the in-game body sliders (e.g. A cape does not resize with the torso, so you end up with a reasonably tall maid with a comically small cape.)
 
+![Unscaled Bones](pictures/ScaleBones.png)
+
 This is because the game copies certain bones so that it can scale it without distorting all of its descendants. This can be fixed however by manually copying the bone in question.
 
 ### Step 1: Make the \_SCL_ Bone
