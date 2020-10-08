@@ -3,7 +3,7 @@
 
 ![Unscaled Bones](pictures/ScaleBones.png)
 
-This is because the game copies certain bones so that it can scale it without distorting all of its descendants. But sometimes you want your bones to scale with it, so they end up distorted. This can be fixed however by manually copying the bone in question.
+This is because the game copies certain bones so that it can scale it without distorting all of its descendants. But sometimes you want your bones to scale with it, or they end up stretched, missized, or misplaced. This can be fixed however by manually copying the bone in question.
 
 ### Step 1: Make the \_SCL_ Bone
 * Make a copy of the bone you want your custom bones to scale with. (`Ctrl D` in Blender)
