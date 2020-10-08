@@ -11,12 +11,10 @@ _Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 b
 ### Step 1: Import to Blender
 * Get your choice of CM3D2 body model loaded in at 1.0 scale. (Beware [import issues](Exporting-Bones.md#roll-import-bug-may-only-apply-in-blender-28))
 * Get your non-CM3D2 Character in the same scene, and make sure that it matches the 1 unit = 1 meter scale. (You may be able to look up the character's cannon height if you're not sure what it should be)
-
-![Imported Character](pictures/Import.png)
-
 * Try and pose the character so that it is similar to the "motorcycle" pose of the CM3D2 body.
   Don't spend much time on this though as alignment needs fine tuning later.
 
+![Imported Character](pictures/Import.png)
 ![Aligned Character](pictures/MotorCyclePose.png)
 
 ### Step 2: Setup the Armatures
