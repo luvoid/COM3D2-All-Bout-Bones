@@ -12,6 +12,9 @@ _NOTE: If you find or have any issues in the documentation, please open a new is
 How to quickly and accurately import a non-CM3D2 character into COM3D2
 using the body sliders script.
 
+### [FAQs: Banish Bone Bugs!](FAQ-Banish-Bone-Bugs.md)
+Frequently asked questions regarding issues with the blender plugins or CM3D2 bones
+
 
 # Bone Tutorials
 ### [Exporting Bones](Exporting-Bones.md)
