@@ -6,7 +6,7 @@ This is a more **advance** technique. You need to be more familiar with CM3D2 mo
 
 _It is highly recommended to make **unique** backups before running scripts, you never know when you'll want to go back to a specific step._
 
-_Character_ refers the the non-CM3D2 model that you want to import, and _CM3D2 body_ is the imported stock CM3D2 body model. 
+_Character_ refers to the non-CM3D2 model that you want to import, and _CM3D2 body_ is the imported stock CM3D2 body model. 
 
 ### Step 1: Import to Blender
 * Get your choice of CM3D2 body model loaded in at 1.0 scale. (Beware [import issues](Exporting-Bones.md#roll-import-bug-may-only-apply-in-blender-28))
