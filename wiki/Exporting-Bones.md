@@ -6,10 +6,10 @@ Maybe I'll add more here, but for now here are the plugins' tutorials.
 ### [BoneUtil BoneDataImport (Japanese)](https://github.com/trzr/Blender-CM3D2-BoneUtil/wiki/BoneDataImport)
 
 ## Vertex Groups
-The names of vertex groups must match the case-sensitive name of an exported local bone for that vertex group to be exported. If there is a vertex with no weight in any exported vertex groups, then Blender-CM3D2-Converter will throw an error.
+The names of vertex groups must match the case-sensitive name of an exported local bone for that vertex group to be exported from blender. If there is a vertex with no weight in any exported vertex groups, then Blender-CM3D2-Converter will throw an error.
 
 ### Deleted Bones
-Just like how a vertex group must match a local bone to be exported, likewise a local bone must match a vertex group to be imported. **If there are no vertices assigned to a local bone via a vertex group, the game will immediately delete that bone.**
+Just like how a vertex group must match a local bone to be exported from blender, likewise a local bone must match a vertex group to be loaded by the game. **If there are no vertices assigned to a local bone via a vertex group, the game will immediately delete that bone.**
 
 ### Vertex Group Limitations
 A .model file will assign a vertex to exactly four vertex groups. It cannot store more than four. If there are less than four it will just assing the remaining others to null. (e.g. if the vertex is only assigned to one vertex group, it will store the other three as null.) **This means you can only assign a vertex to 4 exported vertex groups.**
