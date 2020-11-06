@@ -12,7 +12,7 @@ The names of vertex groups must match the case-sensitive name of an exported loc
 Just like how a vertex group must match a local bone to be exported from blender, likewise a local bone must match a vertex group to be loaded by the game. **If there are no vertices assigned to a local bone via a vertex group, the game will immediately delete that bone.**
 
 ### Vertex Group Limitations
-A .model file will assign a vertex to exactly four vertex groups. It cannot store more than four. If there are less than four it will just assing the remaining others to null. (e.g. if the vertex is only assigned to one vertex group, it will store the other three as null.) **This means you can only assign a vertex to 4 exported vertex groups.**
+A .model file will assign a vertex to exactly four vertex groups. It cannot store more than four. If there are less than four it will just assing the remaining others to `Bip01` with a weight of 0. (e.g. if the vertex is only assigned to one vertex group, it will store the other three as `Bip01: 0.0`.) **This means you can only assign a vertex to 4 exported vertex groups.**
 
 
 ## Roll Import Bug (_May only apply in Blender 2.8+_)
