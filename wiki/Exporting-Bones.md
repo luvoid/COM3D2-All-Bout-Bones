@@ -16,4 +16,5 @@ A .model file will assign a vertex to exactly four vertex groups. It cannot stor
 
 
 ## Roll Import Bug (_Only applies in Blender 2.8+_)
-Be aware that Blender-CM3D2-Converter will give the blender bones an incorrect roll, so if you then use BoneUtil to update the BoneData of imported bones, using the blender bones, or simply export using the armature, your model may load into COM3D2 with twisted limbs. The improper roll values on the blender bones will also affect scripts like `COM3D2_BoneMorph.py`. **This bug is fixed in CM3D2-Converter version luv.2020.10.16+**
+Be aware that Blender-CM3D2-Converter will give the blender bones an incorrect roll, so if you then use BoneUtil to update the BoneData of imported bones, using the blender bones, or simply export using the armature, your model may load into COM3D2 with twisted limbs. The improper roll values on the blender bones will also affect scripts like `COM3D2_BoneMorph.py`. 
+* **This bug is fixed in CM3D2-Converter version luv.2020.10.16+**
