@@ -15,5 +15,5 @@ Just like how a vertex group must match a local bone to be exported from blender
 A .model file will assign a vertex to exactly four vertex groups. It cannot store more than four. If there are less than four it will just assing the remaining others to `Bip01` with a weight of 0. (e.g. if the vertex is only assigned to one vertex group, it will store the other three as `Bip01: 0.0`.) **This means you can only assign a vertex to 4 exported vertex groups.**
 
 
-## Roll Import Bug (_Only applies in Blender 2.8+ with non-luv-build CM3D2-Converter_)
-Be aware that Blender-CM3D2-Converter will give the blender bones an incorrect roll, so if you then use BoneUtil to update the BoneData of imported bones, using the blender bones, or simply export using the armature, your model may load into COM3D2 with twisted limbs. The improper roll values on the blender bones will also affect scripts like `COM3D2_BoneMorph.py`.
+## Roll Import Bug (_Only applies in Blender 2.8+_)
+Be aware that Blender-CM3D2-Converter will give the blender bones an incorrect roll, so if you then use BoneUtil to update the BoneData of imported bones, using the blender bones, or simply export using the armature, your model may load into COM3D2 with twisted limbs. The improper roll values on the blender bones will also affect scripts like `COM3D2_BoneMorph.py`. **This bug is fixed in CM3D2-Converter version luv.2020.10.16+**
