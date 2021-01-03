@@ -1,25 +1,24 @@
 # [Meido-ify a Character](https://github.com/luvoid/COM3D2-All-Bout-Bones/blob/main/wiki/Meidoify-a-Character.md)
 
-**NOTE: I haven't really tested this in many scenarios yet, so you may have to manually create certain properties, bones, etc, for the scripts to work right**
+**NOTE: This tutorial uses Blender CM3D2 Converter version __luv.2021.01.02__**
 
 This is a more **advance** technique. You need to be more familiar with CM3D2 modding and blender to follow this.
 
-_It is highly recommended to make **unique** backups before running scripts, you never know when you'll want to go back to a specific step._
+_It is highly recommended to make **unique** backups before using large operators. You never know when you'll want to go back to a specific step._
 
 _Character_ refers to the non-CM3D2 model that you want to import, and _CM3D2 body_ is the imported stock CM3D2 body model. 
 
 ### Step 1: Import to Blender
-* Get your choice of CM3D2 body model loaded in at 1.0 scale. (Beware [import issues](Exporting-Bones.md#roll-import-bug-may-only-apply-in-blender-28))
-* Get your non-CM3D2 Character in the same scene, and make sure that it matches the 1 unit = 1 meter scale. (You may be able to look up the character's cannon height if you're not sure what it should be)
-* Try and pose the character so that it is similar to the "motorcycle" pose of the CM3D2 body.
-  Don't spend much time on this though as alignment needs fine tuning later.
+* Get your choice of CM3D2 Body model imported into blender. (Or you could `body001` or `T-Pose body` from the add object menu) 
+* Get your non-CM3D2 Character in the same scene, and make sure that it matches the scale you imported the CM3D2 body. If you imported it at the 5x scale then 1 unit = 0.2 meters. (You may be able to look up the character's cannon height if you're not sure what it should be)
+* OPTIONAL: If you Character has a skirt, you should import a similar skirt and combine it with with the CM3D2 Body into one armature object. 
 
 ![Imported Character](pictures/Import.png)
 ![Aligned Character](pictures/MotorCyclePose.png)
 
 ### Step 2: Setup the Armatures
-* Select the CM3D2 Body model and run [`COM3D2_BoneMorph.py`](../scripts/COM3D2_BoneMorph.py)
-* It may complain about missing bones or properties, so try adding those manually.
+* Select the CM3D2 Body's armature object and go to `Properties Window > Armature Tab > CM3D2 Sliders`
+* Use the "Connect Sliders" button. Don't press the button repeatedly as connecting while they are already connected may cause problems. 
 
 ### Step 3: Sliders
 * Under the custom properties of the CM3D2 body object, there should be properties that act identically to the body sliders in game. If not you may need to go back to step 2.
