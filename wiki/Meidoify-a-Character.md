@@ -4,6 +4,8 @@
 
 This is a more **advance** technique. You need to be more familiar with CM3D2 modding and blender to follow this.
 
+This process makes use of armatures and poses, so you may wanna know how that works in blender. The goal is to align the game's body to some external character's clothing using sliders, then invert all the transforms you make, and morph the clothing back with it, so that in the CM3D2 game, when you create a maid with the same settings, it has the same proportions as the original character.
+
 _It is highly recommended to make **unique** backups before using large operators. You never know when you'll want to go back to a specific step._
 
 _Character_ refers to the non-CM3D2 model that you want to import, and _CM3D2 body_ is the imported stock CM3D2 body model. 
@@ -18,75 +20,63 @@ _Character_ refers to the non-CM3D2 model that you want to import, and _CM3D2 bo
 
 ### Step 2: Setup the Armatures
 * Select the CM3D2 Body's armature object and go to `Properties Window > Armature Tab > CM3D2 Sliders`
-* Use the "Connect Sliders" button. Don't press the button repeatedly as connecting while they are already connected may cause problems. 
+* Use the "Connect Sliders" button. Don't press the button repeatedly as connecting while they are already connected may cause problems.
+* The Body Sliders and Wide sliders under the Connect Sliders button should not change the CM3D2 Body.
 
-### Step 3: Sliders
-* Under the custom properties of the CM3D2 body object, there should be properties that act identically to the body sliders in game. If not you may need to go back to step 2.
-* Using **only the sliders** adjust the CM3D2 body to try and get the proportions to match your character's.
-* Move and repose the character as needed to help it line up with the CM3D2 body.
+### Step 3: Using Sliders
+* By reposing the CM3D2 Body via rotating bones and using **only the sliders to resize/reposition**, adjust the CM3D2 body and try to get all parts to align with the Character's.
+* Feel free to move and repose the Character as needed to help it line up with the CM3D2 body. It helps if the pelvis is properly aligned as the sliders do not change this centeral point.
 * Repeat the previous two sub-steps until you are satisfied with the alignment.
 
 ![Aligned COM3D2 Body](pictures/MotorCyclePoseAlign.png)
 ![Body Sliders](pictures/BodySliders.png)
 
-### Step 4: Vertex Groups
-* First, apply the armature-mesh-modifier all of the character's meshes (make a copy of the object first).
-* Then, apply the current pose of the character as it's new rest pose.
-* Repeat the previous sub-steps for the CM3D2 body, but also apply it's shapekeys (make a copy of the object first, it is needed later).
-* Next the vertex groups need to be transferred from the CM3D2 body to the character. This can be done the old fashion way, or using CM3D2-Converter, or using [`COM3D2_Referenced_Vertex_Weight_Transfer.py`](../scripts/COM3D2_Referenced_Vertex_Weight_Transfer.py).
-* Join (`Ctrl J`) the copy of the character into the CM3D2 body to become what will now be referred to as the _CM3D2 Character_. 
-* Make sure to add new armature-mesh-modifiers into both of the new meshes.
+### Step 4: Apply Prime Field
+* If you haven't been making backups, you definately want to make one here.
+* After the two models are aligned, select the CM3D2 Body armature object, enter Pose Mode, and run `Pose > Apply > Apply Prime Field`.
+* * The rest pose of the armature is now what the pose just was.
+* * You can use the buttons in the Armature Properties to change the pose to the prime pose and base pose, but save the "Swap Prime Field" button for later.
+* * Apply Prime Field will disconnect the body sliders. If you used sliders before, the sliders won't work corretly on a primed armature.
+* OPTIONAL: At this point feel free to scale / move / rotate any bones manually to further make the models line up. This is a good time to fix any minor clippings.
+* * IF you chose to do this, keep in mind that these changes won't be able to be replicated in game, so save it for minor adjustments only.
+* * When you are done, you will have to Apply Prime Field again; this time with "Keep Origial" enabled.
 
-### Step 5: Bones
-* Move extra bones from the character's half of the CM3D2 character's armature to some appropriate bones in the CM3D2 body's half.
+### Step 5: Vertex Groups
+* Next the vertex groups need to be transferred from the CM3D2 body to the character. This can be done the old fashion way, using CM3D2-Converter, or using [`COM3D2_Referenced_Vertex_Weight_Transfer.py`](../scripts/COM3D2_Referenced_Vertex_Weight_Transfer.py).
+* Join (`Ctrl J`) a copy of the character into a copy of the CM3D2 body to become what will now be referred to as the _CM3D2 Character_. 
+* Make sure to add/fix new armature-mesh-modifiers into all of the new meshes to the new armature.
+
+### Step 6: Bones
+* Move extra bones from the Character's half of the CM3D2 Character's armature to some appropriate bones in the CM3D2 Body's half.
 * Decide what bones you want to be scaled with [\_SCL_ bones](Scaling-Bones.md) and follow their step 1 & 2 (but not step 3 yet).
 * Sort out and rename your [dynamic bones](Dynamic-Bones.md) now, or else you'll need to come back to this step later if you need to change their hierarchy to be under a different \_SCL_ bone.
 
-### Step 6: Magic!
-This step is going to make use of animations and poses, so you may wanna know how that works in blender. The goal is to invert all the transforms you made on the CM3D2 body earlier, and morph the character mesh with it, so that in the COM3D2 game, when you create a maid with the same settings, it has the same proportions as the original character.
+### Step 7: Cleanup
+* Go ahead and preview the base pose by pressing the "Original Pose" button in the CM3D2 Character's Armature Properties.
+* Now is the time to clean vertex groups, bones, or any other issues you find. If something was morphed in a strange way it's likely due to bad vertex weights. Vertex weights can be cleaned up by hand without having to reverse any steps.
 
-i.e.
-> _character_ - (_body_ + _sliders_) 
->
-> = _character_ - _sliders_ - _body_ 
->
-> --> export model 
->
-> --> setting body and sliders in-game 
->
-> = (_character_ - _sliders_ - _body_) + (_sliders_ + _body_) 
->
-> = _character_
+### Step 8: Shape Key Transfers
+* This step could optionally be done after step 9, but usually it is better to do it now.
+* Transfer the shape keys from the CM3D2 body mesh to the clothing. Since you have already setup the vertex groups you can use the "Referenced Shape Key Transfer" operator in `Properties Window > Mesh Tab > Shape Keys > Down-Arrow`.
+* You will want to enable the "Bind to source mix" option. This will adjust the Character's base shape according to how the body is currently shaped.
 
-* Using the original CM3D2 body, make sure you are recording keyframes, then apply visual transform to pose.
-* Save the current pose as a new NLA Strip named something like "Character Pose"
-* Clear CM3D2 body's animation data (not the NLA track though) and then clear all user transforms. CM3D2 should now be back to its default state. You may need to disable the NLA track in the NLA editor.
-* While CM3D2 body is in its default state, repeat sub-step 1 & 2, and name it something like "Default Pose".
-* Create two new NLA Tracks under CM3D2 Character (you may want to make a copy first)
-* Put the "Default Pose" NLA strip in the top NLA track, and set its blending mode to "add"
-* Put the "Character Pose" NLA strip in the second NLA track directly under "Default Pose", and set it's mode to "Subtract"
-
-If everything was done correctly, the character mesh should be morphed to fit the default posed CM3D2 body.
+### Step 9: Magic!
+* Again, make sure you are making backups. Now is especially important.
+* Now is the time to use the "Swap Prime Field" button in the CM3D2 Character's Armature Properties.
+* If everything worked correctly, the character mesh should be morphed to fit the default posed CM3D2 body.
+* If something seems off, it's likely that some vertex weights need fixing back at step 7. There is a slight chance that something was done wrong all the way back at step 4.
 
 ![NLA Editor Timeline](pictures/NLAPoseInversion.png)
 ![Newly Morphed CM3D2 Character](pictures/InverseMorphed.png)
 
-### Step 7: Cleanup
-Now is the time to clean vertex groups, bones, or any other issues you find. If something was morphed in a strange way it's likely due to bad vertex weights. Vertex weights can be cleaned up by hand without having to reverse any steps.
 
-### Step 8: Apply
-* Apply the armature-mesh-modifier to the CM3D2 character mesh, and the rest pose to a copy of the CM3D2 armature. This is similar to steps 4.1-4.2.
-* Add a new armature-mesh-modifier to the CM3D2 character mesh.
-* Remove `_SCL_` from all the vertex groups (done easily with [`COM3D2_Cleanup_SCL_groups.py`](../scripts/COM3D2_Cleanup_SCL_groups.py)), except the ones you need to keep for your [Scaling Bones: Step 3](Scaling-Bones.md#step-3-edit-the-bone-data) which you should also do now. 
+### Step 10: Removing Extras
+* In the CM3D2 Character's Armature Properties, use the "Cleanup Scale Bones" button to remove any uneeded scale bones.
+* * The scale bones you need to keep for your [Scaling Bones: Step 3](Scaling-Bones.md#step-3-edit-the-bone-data) (which you should also do now) should automatically remain if you had the "Keep Bones With Children" option enabled. 
 * Use BoneUtil to add any custom bones to the bone data.
-* Fix any shapekeys as needed. First, try and make a shapekey of CM3D2 Character for every non-zero shapekey in the CM3D2 Body that shapes it to match the zeros of their respective CM3D2 body shapekeys. Then, use CM3D2 Converter's shapekey scaling tool to get a new shapekey where 
-	 > _newSk_ = _Sk_ * ((_bodySkMax_-_bodySkValue_)/_bodySkMax_ + 1) 
-	 
-	 and update the basis so that 
-	
-	> _newBasis_ = _Basis_ - _Sk_
+* OPTIONAL: Import a fresh CM3D2 Body to double check everything and maybe fix any shapekeys as needed.
 
-### Step 9: Export
+### Step 11: Export
 Finally, just follow the normal procedures that you would for any other CM3D2 model. There are many tutorials you can find detailing this.
 
 ![Exported Character](pictures/MeidoifyExport.png)
