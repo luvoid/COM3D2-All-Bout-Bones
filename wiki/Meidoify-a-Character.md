@@ -41,10 +41,13 @@ _Character_ refers to the non-CM3D2 model that you want to import, and _CM3D2 bo
 * * IF you chose to do this, keep in mind that these changes won't be able to be replicated in game, so save it for minor adjustments only.
 * * When you are done, you will have to Apply Prime Field again; this time with "Keep Origial" enabled.
 
+![Armature Properties](pictures/ArmatureProperties.png)
+
 ### Step 5: Vertex Groups
 * Next the vertex groups need to be transferred from the CM3D2 body to the character. This can be done the old fashion way, using CM3D2-Converter, or using [`COM3D2_Referenced_Vertex_Weight_Transfer.py`](../scripts/COM3D2_Referenced_Vertex_Weight_Transfer.py).
 * Join (`Ctrl J`) a copy of the character into a copy of the CM3D2 body to become what will now be referred to as the _CM3D2 Character_. 
 * Make sure to add/fix new armature-mesh-modifiers into all of the new meshes to the new armature.
+* Also fix the Character Mesh's orientation now. Do this by using "Align to Base Bone" in `Properties Window > Object Tab > Transform`.
 
 ### Step 6: Bones
 * Move extra bones from the Character's half of the CM3D2 Character's armature to some appropriate bones in the CM3D2 Body's half.
@@ -66,7 +69,6 @@ _Character_ refers to the non-CM3D2 model that you want to import, and _CM3D2 bo
 * If everything worked correctly, the character mesh should be morphed to fit the default posed CM3D2 body.
 * If something seems off, it's likely that some vertex weights need fixing back at step 7. There is a slight chance that something was done wrong all the way back at step 4.
 
-![NLA Editor Timeline](pictures/NLAPoseInversion.png)
 ![Newly Morphed CM3D2 Character](pictures/InverseMorphed.png)
 
 
