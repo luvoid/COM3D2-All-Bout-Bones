@@ -8,7 +8,10 @@ This process makes use of armatures and poses, so you may wanna know how that wo
 
 _It is highly recommended to make **unique** backups before using large operators. You never know when you'll want to go back to a specific step._
 
-_Character_ refers to the non-CM3D2 model that you want to import, and _CM3D2 body_ is the imported stock CM3D2 body model. 
+_Character_ refers to the non-CM3D2 model that you want to import, and _CM3D2 body_ is the imported stock CM3D2 body model.
+
+There is also an [uncommentated tutorial video](Meidoify-a-Character.md#Uncommentated-Tutorial-Video) at the end.
+
 
 ### Step 1: Import to Blender
 * Get your choice of CM3D2 Body model imported into blender. (Or you could `body001` or `T-Pose body` from the add object menu) 
@@ -82,3 +85,6 @@ _Character_ refers to the non-CM3D2 model that you want to import, and _CM3D2 bo
 Finally, just follow the normal procedures that you would for any other CM3D2 model. There are many tutorials you can find detailing this.
 
 ![Exported Character](pictures/MeidoifyExport.png)
+
+# Uncommentated Tutorial Video
+![Meidoify Tutorial Video](https://drive.google.com/file/d/1rRfEo8L8K0KAYL1nXHpFEbSOcPeTHavK/view?usp=sharing)
