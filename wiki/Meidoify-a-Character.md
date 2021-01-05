@@ -10,7 +10,7 @@ _It is highly recommended to make **unique** backups before using large operator
 
 _Character_ refers to the non-CM3D2 model that you want to import, and _CM3D2 body_ is the imported stock CM3D2 body model.
 
-There is also an [uncommentated tutorial video](Meidoify-a-Character.md#Uncommentated-Tutorial-Video) at the end.
+There is also an [uncommentated tutorial video](https://drive.google.com/file/d/1rRfEo8L8K0KAYL1nXHpFEbSOcPeTHavK/view?usp=sharing)
 
 
 ### Step 1: Import to Blender
@@ -85,6 +85,3 @@ There is also an [uncommentated tutorial video](Meidoify-a-Character.md#Uncommen
 Finally, just follow the normal procedures that you would for any other CM3D2 model. There are many tutorials you can find detailing this.
 
 ![Exported Character](pictures/MeidoifyExport.png)
-
-# Uncommentated Tutorial Video
-![Meidoify Tutorial Video](https://drive.google.com/file/d/1rRfEo8L8K0KAYL1nXHpFEbSOcPeTHavK/view?usp=sharing)
