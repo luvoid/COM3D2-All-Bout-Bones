@@ -28,8 +28,12 @@ There is also an [uncommentated tutorial video](https://drive.google.com/file/d/
 
 ### Step 3: Using Sliders
 * By reposing the CM3D2 Body via rotating bones and using **only the sliders to resize/reposition**, adjust the CM3D2 body and try to get all parts to align with the Character's.
+* * **NOTE:** You are allowed to change the pose of the CM3D2 Body. The limitation is that you cannot translate or resize the bones. You are free to rotate most bones however you wish.
+* * The exception is bones with `_SCL_` in the name. These bones are often in the same place as / overlapping with their non-`_SCL_`counterparts so be careful to not touch these.
 * Feel free to move and repose the Character as needed to help it line up with the CM3D2 body. It helps if the pelvis is properly aligned as the sliders do not change this centeral point.
-* Repeat the previous two sub-steps until you are satisfied with the alignment.
+* If the CM3D2 Body you are using has shape keys, you may use those as well. Special shape keys are often needed to get the butt and thighs to align properly.
+* * If you're still having trouble aliging the butt, try rotating `Bip01 Pelvis`.
+* Repeat this step until you are satisfied with the alignment.
 
 ![Aligned COM3D2 Body](pictures/MotorCyclePoseAlign.png)
 ![Body Sliders](pictures/BodySliders.png)
@@ -48,8 +52,10 @@ There is also an [uncommentated tutorial video](https://drive.google.com/file/d/
 
 ### Step 5: Vertex Groups
 * Next the vertex groups need to be transferred from the CM3D2 body to the character. This can be done the old fashion way, using CM3D2-Converter, or using [`COM3D2_Referenced_Vertex_Weight_Transfer.py`](../scripts/COM3D2_Referenced_Vertex_Weight_Transfer.py).
-* Join (`Ctrl J`) a copy of the character into a copy of the CM3D2 body to become what will now be referred to as the _CM3D2 Character_. 
-* Make sure to add/fix new armature-mesh-modifiers into all of the new meshes to the new armature.
+* Join (`Ctrl J`) a copy of the character into a copy of the CM3D2 body to become what will now be referred to as the _CM3D2 Character_.
+* Copies of the Character's clothing mesh also needs to parented to the new CM3D2 Character's armature object.
+* * To parent an object without it moving, select to object, then it's parent, then use `Ctrl P` and select "Object (keep transform)".
+* * Make sure to add/fix new armature-mesh-modifiers into all of the new meshes to the new armature.
 * Also fix the Character Mesh's orientation now. Do this by using "Align to Base Bone" in `Properties Window > Object Tab > Transform`.
 
 ### Step 6: Bones
